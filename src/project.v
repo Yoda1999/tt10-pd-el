@@ -6,11 +6,11 @@
 `default_nettype none
 
 module full_adder (
-    input a,        // First input
-    input b,        // Second input
-    input cin,      // Carry input
-    output sum,     // Sum output
-    output cout     // Carry output
+    input wire a,        // First input
+    input wire b,        // Second input
+    input wire cin,      // Carry input
+    output wire sum,     // Sum output
+    output  wire cout     // Carry output
 );
 
     // Internal signals
