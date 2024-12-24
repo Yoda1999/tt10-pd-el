@@ -5,23 +5,25 @@
 
 `default_nettype none
 
-module tt_um_example (
-    input  wire [7:0] ui_in,    // Dedicated inputs
-    output wire [7:0] uo_out,   // Dedicated outputs
-    input  wire [7:0] uio_in,   // IOs: Input path
-    output wire [7:0] uio_out,  // IOs: Output path
-    output wire [7:0] uio_oe,   // IOs: Enable path (active high: 0=input, 1=output)
-    input  wire       ena,      // always 1 when the design is powered, so you can ignore it
-    input  wire       clk,      // clock
-    input  wire       rst_n     // reset_n - low to reset
+module full_adder (
+    input a,        // First input
+    input b,        // Second input
+    input cin,      // Carry input
+    output sum,     // Sum output
+    output cout     // Carry output
 );
 
-  // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
-  assign uio_out = 0;
-  assign uio_oe  = 0;
+    // Internal signals
+    wire sum1, c1, c2;
 
-  // List all unused inputs to prevent warnings
-  wire _unused = &{ena, clk, rst_n, 1'b0};
+    // Sum calculation
+    xor (sum1, a, b);
+    xor (sum, sum1, cin);
+
+    // Carry calculation
+    and (c1, a, b);
+    and (c2, sum1, cin);
+    or (cout, c1, c2);
 
 endmodule
+
