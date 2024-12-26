@@ -10,13 +10,15 @@ module tt_um_yoda_1999full_adder (
     input wire b,        // Second input
     input wire cin,      // Carry input
     input  wire clk,
+    input  wire       ena,
     output wire sum,     // Sum output
-    output  wire cout     // Carry output
+    output  wire cout,    // Carry output
+    input  wire       rst_n  
 );
 
     // Internal signals
     wire sum1, c1, c2;
-    wire _unused = &{clk};
+    wire _unused = &{clk,ena,rst_n};
     // Sum calculation
     xor (sum1, a, b);
     xor (sum, sum1, cin);
