@@ -26,4 +26,16 @@ module tt_um_yoda_1999full_adder (
     or (cout, c1, c2);
 
 endmodule
+module dff_cell (
+    input wire clk,
+    input wire d,
+    output reg q,
+    output wire notq
+    );
+
+    assign notq = !q;
+    always @(posedge clk)
+        q <= d;
+
+endmodule
 
