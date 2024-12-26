@@ -5,7 +5,7 @@
 
 `default_nettype none
 
-module full_adder (
+module tt_um_yoda_1999full_adder (
     input wire a,        // First input
     input wire b,        // Second input
     input wire cin,      // Carry input
