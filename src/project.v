@@ -9,7 +9,7 @@ module tt_um_yoda_1999full_adder (
     input wire a,        // First input
     input wire b,        // Second input
     input wire cin,      // Carry input
-    input  wire clk
+    input  wire clk,
     output wire sum,     // Sum output
     output  wire cout     // Carry output
 );
