@@ -9,12 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+It is a simple Full adder for testing purpose 
 
 ## How to test
 
-Explain how to use your project
+A combination of input and output is given to test the sum and carry out bit.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+N/A
