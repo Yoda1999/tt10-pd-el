@@ -9,13 +9,14 @@ module tt_um_yoda_1999full_adder (
     input wire a,        // First input
     input wire b,        // Second input
     input wire cin,      // Carry input
+    input  wire clk
     output wire sum,     // Sum output
     output  wire cout     // Carry output
 );
 
     // Internal signals
     wire sum1, c1, c2;
-
+    wire _unused = &{clk}
     // Sum calculation
     xor (sum1, a, b);
     xor (sum, sum1, cin);
@@ -26,16 +27,5 @@ module tt_um_yoda_1999full_adder (
     or (cout, c1, c2);
 
 endmodule
-module dff_cell (
-    input wire clk,
-    input wire d,
-    output reg q,
-    output wire notq
-    );
 
-    assign notq = !q;
-    always @(posedge clk)
-        q <= d;
-
-endmodule
 
