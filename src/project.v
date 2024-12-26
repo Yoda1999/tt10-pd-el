@@ -14,7 +14,8 @@ module tt_um_yoda_1999full_adder (
     output wire sum,     // Sum output
     output  wire cout,    // Carry output
     input  wire       rst_n,
-    input  wire [7:0] ui_in
+    input  wire [7:0] ui_in,
+    input wire uio_in
 );
 
     // Internal signals
