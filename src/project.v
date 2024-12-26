@@ -24,7 +24,7 @@ module tt_um_yoda_1999full_adder (
 
     wire a=ui_in[0];
     wire b=ui_in[1];
-    wire c=ui_in[2];
+    wire cin=ui_in[2];
                    
     // Sum calculation
     xor (sum1, a, b);
