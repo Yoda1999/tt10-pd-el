@@ -17,13 +17,14 @@ module tt_um_yoda_1999full_adder (
 );
 
     // Internal signals
-    wire a,b,cin,sum,cout;
+    //wire a,b,cin;
+    wire sum,cout;
     wire sum1, c1, c2;
     wire _unused = &{clk,ena,rst_n,uio_in,1'b0};
 
-    assign a=ui_in[0];
-    assign b=ui_in[1];
-    assign c=ui_in[2];
+    wire a=ui_in[0];
+    wire b=ui_in[1];
+    wire c=ui_in[2];
                    
     // Sum calculation
     xor (sum1, a, b);
